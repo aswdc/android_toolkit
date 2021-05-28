@@ -1,0 +1,3 @@
+rootProject.name = "StandardDemo"
+include ':app'
+include ':aswdc_standard'
