@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="libraryColorWhite">#FFFFFF</color>
+    <color name="libColorWindowBackground">#f0f0f0</color>
+    <color name="libColorWhiteText">#fffbfa</color>
+    <color name="libColorWhite">#ffffff</color>
+    <color name="libColorBlack">#000000</color>
+</resources>

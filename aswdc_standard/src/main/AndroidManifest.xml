@@ -3,7 +3,7 @@
     package="com.aswdc_standard">
 
     <application>
-        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".BaseSplashActivity"></activity>
     </application>
 
 </manifest>
