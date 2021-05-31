@@ -38,9 +38,8 @@ public class BaseDeveloperActivity extends LibBaseActivity {
 
         if (savedInstanceState != null) {
             ivAppIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
-            tvAppVersion.setText(savedInstanceState.getInt(LibConstants.APP_TITLE));
-            appName = savedInstanceState.getString(LibConstants.APP_NAME);
-            tvAppVersion.setText(savedInstanceState.getString(LibConstants.APP_NAME) + " V(" + savedInstanceState.getString(LibConstants.APP_VERSION) + ")");
+            appName = savedInstanceState.getString(LibConstants.APP_TITLE);
+            tvAppVersion.setText(savedInstanceState.getString(LibConstants.APP_TITLE) + " V(" + savedInstanceState.getString(LibConstants.APP_VERSION) + ")");
             shareMessage = savedInstanceState.getString(LibConstants.APP_SHARE_MESSAGE);
             tvDeveloperName.setText(savedInstanceState.getString(LibConstants.APP_DEVELOPER_NAME));
             tvMentorName.setText(savedInstanceState.getString(LibConstants.APP_MENTOR_NAME));

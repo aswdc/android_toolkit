@@ -44,7 +44,18 @@ public class LibBaseActivity extends AppCompatActivity {
         return 0;
     }
 
-    public Bundle getSplashScreenDetail(String packageName) {
+    public Bundle setDeveloperScreenDetail(String packageName, String shareMessage, String developerName, String mentorName) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(LibConstants.APP_ICON, getAppIcon(packageName));
+        bundle.putString(LibConstants.APP_TITLE, getAppNameFromPkgName(packageName));
+        bundle.putString(LibConstants.APP_VERSION, getVerionByPackageName(packageName));
+        bundle.putString(LibConstants.APP_SHARE_MESSAGE, shareMessage);
+        bundle.putString(LibConstants.APP_DEVELOPER_NAME, developerName);
+        bundle.putString(LibConstants.APP_MENTOR_NAME, mentorName);
+        return bundle;
+    }
+
+    public Bundle setSplashScreenDetail(String packageName) {
         Bundle bundle = new Bundle();
         bundle.putInt(LibConstants.APP_ICON, getAppIcon(packageName));
         bundle.putString(LibConstants.APP_TITLE, getAppNameFromPkgName(packageName));

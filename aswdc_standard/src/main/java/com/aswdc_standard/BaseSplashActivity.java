@@ -26,7 +26,7 @@ public class BaseSplashActivity extends LibBaseActivity {
         tvAppVersion = findViewById(R.id.tvAppVersion);
         if (savedInstanceState != null) {
             ivIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
-            tvTitle.setText(savedInstanceState.getInt(LibConstants.APP_TITLE));
+            tvTitle.setText(savedInstanceState.getString(LibConstants.APP_TITLE));
             tvAppVersion.setText("V" + savedInstanceState.getString(LibConstants.APP_VERSION));
         }
     }
