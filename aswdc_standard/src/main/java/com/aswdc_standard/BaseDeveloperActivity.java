@@ -39,13 +39,13 @@ public class BaseDeveloperActivity extends LibBaseActivity {
         if (savedInstanceState != null) {
             ivAppIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             appName = savedInstanceState.getString(LibConstants.APP_TITLE);
-            tvAppVersion.setText(savedInstanceState.getString(LibConstants.APP_TITLE) + " V(" + savedInstanceState.getString(LibConstants.APP_VERSION) + ")");
+            tvAppVersion.setText(savedInstanceState.getString(LibConstants.APP_TITLE) + " (v" + savedInstanceState.getString(LibConstants.APP_VERSION) + ")");
             shareMessage = savedInstanceState.getString(LibConstants.APP_SHARE_MESSAGE);
-            tvDeveloperName.setText(savedInstanceState.getString(LibConstants.APP_DEVELOPER_NAME));
-            tvMentorName.setText(savedInstanceState.getString(LibConstants.APP_MENTOR_NAME));
+            tvDeveloperName.setText(savedInstanceState.getString(LibConstants.APP_DEVELOPER_NAME) + ",\nComputer Engineering Department");
+            tvMentorName.setText(savedInstanceState.getString(LibConstants.APP_MENTOR_NAME) + ",\nComputer Engineering Department");
         }
         tvCompanyRights.setText("\uf1f9 " + Calendar.getInstance().get(Calendar.YEAR) + "  Darshan Institute of Engineering &amp; Technology");
-        wvDetail.loadDataWithBaseURL(null, "<html><body align=\"justify\" style=\"font-size:15px;color:#747474\">ASWDC is Application, Software and Website Development Center @ Darshan Engineering College run by Students and Staff of Computer Engineering Department.<br><br> Sole purpose of ASWDC is to bridge gap between university curriculum &amp; industry demands. Students learn cutting edge technologies, develop real world application &amp; experiences professional environment @ ASWDC under guidance of industry experts &amp; faculty members", "text/html", "utf-8", null);
+        wvDetail.loadDataWithBaseURL(null, "<html><body align=\"justify\" style=\"font-size:15px;color:#747474\">ASWDC is Application, Software and Website Development Center @ Darshan Engineering College run by Students and Staff of Computer Engineering Department.<br><br> Sole purpose of ASWDC is to bridge gap between university curriculum &amp; industry demands. Students learn cutting edge technologies, develop real world application &amp; experiences professional environment @ ASWDC under guidance of industry experts &amp; faculty members.", "text/html", "utf-8", null);
     }
 
     public void onEmailClick(View view) {

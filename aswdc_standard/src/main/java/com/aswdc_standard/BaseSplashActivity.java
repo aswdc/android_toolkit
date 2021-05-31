@@ -12,7 +12,6 @@ public class BaseSplashActivity extends LibBaseActivity {
     TextView tvTitle;
     TextView tvAppVersion;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +20,16 @@ public class BaseSplashActivity extends LibBaseActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         ivIcon = findViewById(R.id.ivAppIcon);
         tvTitle = findViewById(R.id.tvTitle);
         tvAppVersion = findViewById(R.id.tvAppVersion);
         if (savedInstanceState != null) {
             ivIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             tvTitle.setText(savedInstanceState.getString(LibConstants.APP_TITLE));
-            tvAppVersion.setText("V" + savedInstanceState.getString(LibConstants.APP_VERSION));
+            tvAppVersion.setText("v" + savedInstanceState.getString(LibConstants.APP_VERSION));
         }
     }
 }
