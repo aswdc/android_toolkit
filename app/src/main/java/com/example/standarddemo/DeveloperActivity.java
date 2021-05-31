@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.aswdc_standard.BaseDeveloperActivity;
-import com.aswdc_standard.BaseSplashActivity;
 import com.aswdc_standard.LibConstants;
 
 public class DeveloperActivity extends BaseDeveloperActivity {
