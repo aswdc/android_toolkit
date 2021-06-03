@@ -1,4 +1,4 @@
-Android Skeleton App
+<b>Android Skeleton App</b>
 
 This directory contains the full implementation of a basic application for the Android platform, demonstrating the basic facilities that applications will use.  You can run the application either directly from the "test"
 list in the app launcher (it is named Skeleton App) or by selecting it from the top list in the Sample Code app.
