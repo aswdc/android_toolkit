@@ -1,1 +1,8 @@
-<resources></resources>
+<resources>
+    <string name="lbl_name_mandatory">Name *</string>
+    <string name="lbl_mobile">Mobile</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_enter_message">Enter message *</string>
+    <string name="lbl_send">Send</string>
+    <string name="lbl_clear">Clear</string>
+</resources>

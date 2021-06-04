@@ -1,12 +1,9 @@
 package com.aswdc_standard;
 
-import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,11 +52,13 @@ public class LibBaseActivity extends AppCompatActivity {
         return bundle;
     }
 
-    public Bundle setSplashScreenDetail(String packageName) {
+    public Bundle setSplashScreenDetail(String packageName, boolean isShowAppversion, boolean isShowAppName) {
         Bundle bundle = new Bundle();
         bundle.putInt(LibConstants.APP_ICON, getAppIcon(packageName));
         bundle.putString(LibConstants.APP_TITLE, getAppNameFromPkgName(packageName));
         bundle.putString(LibConstants.APP_VERSION, getVerionByPackageName(packageName));
+        bundle.putBoolean(LibConstants.IS_APP_VERSION,isShowAppversion);
+        bundle.putBoolean(LibConstants.IS_APP_NAME,isShowAppName);
         return bundle;
     }
 }

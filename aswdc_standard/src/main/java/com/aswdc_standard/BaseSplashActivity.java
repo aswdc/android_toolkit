@@ -1,6 +1,7 @@
 package com.aswdc_standard;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -30,6 +31,8 @@ public class BaseSplashActivity extends LibBaseActivity {
             ivIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             tvTitle.setText(savedInstanceState.getString(LibConstants.APP_TITLE));
             tvAppVersion.setText("v" + savedInstanceState.getString(LibConstants.APP_VERSION));
+            tvAppVersion.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_APP_VERSION) ? View.VISIBLE : View.GONE);
+            tvTitle.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_APP_NAME) ? View.VISIBLE : View.GONE);
         }
     }
 }
