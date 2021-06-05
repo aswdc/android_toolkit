@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
                 android:background="@drawable/background_textview_developer"
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
@@ -99,7 +99,7 @@
                             android:layout_weight="2"
                             android:fontFamily="sans-serif-normal"
                             android:paddingLeft="@dimen/_3sdp"
-                            android:text="Prof. Rajkumar Gondaliya, Computer Engineering Department" />
+                            android:text="Prof. Rajkumar Gondaliya, School Of Computer Science" />
 
                     </LinearLayout>
 
@@ -133,7 +133,7 @@
                             android:layout_weight="2"
                             android:fontFamily="sans-serif-normal"
                             android:paddingLeft="@dimen/_3sdp"
-                            android:text="Prof. Nilesh Gambhava, Computer Engineering Department" />
+                            android:text="Prof. Nilesh Gambhava, School Of Computer Science" />
 
                     </LinearLayout>
 
@@ -166,7 +166,7 @@
                             android:layout_weight="2"
                             android:fontFamily="sans-serif-normal"
                             android:paddingLeft="@dimen/_3sdp"
-                            android:text="ASWDC,\nComputer Engineering Department" />
+                            android:text="ASWDC,\nSchool Of Computer Science" />
 
                     </LinearLayout>
 
@@ -199,7 +199,7 @@
                             android:layout_weight="2"
                             android:fontFamily="sans-serif-normal"
                             android:paddingLeft="@dimen/_3sdp"
-                            android:text="Darshan Institute of Engineering &amp; Technology, Rajkot, Gujarat - INDIA" />
+                            android:text="Darshan University,\nRajkot, Gujarat - INDIA" />
 
                     </LinearLayout>
 
@@ -209,7 +209,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:background="@drawable/background_textview_developer"
                 android:fontFamily="sans-serif"
@@ -247,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dev_tv_aswdcinfo"
                         android:fontFamily="sans-serif-normal"
-                        android:text="ASWDC is the in-house Mobile Application, Software &amp; Website Development Center runned by Computer Engineering Department of Darshan Institute of Engineering &amp; Technology, Rajkot where students work under direct guidance of industry experts &amp; teachers." />-->
+                        android:text="ASWDC is the in-house Mobile Application, Software &amp; Website Development Center runned by School Of Computer Science of Darshan University, Rajkot where students work under direct guidance of industry experts &amp; teachers." />-->
 
                     <WebView
                         android:id="@+id/developer_wv_detail"
@@ -264,7 +264,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:background="@drawable/background_textview_developer"
                 android:fontFamily="sans-serif"
