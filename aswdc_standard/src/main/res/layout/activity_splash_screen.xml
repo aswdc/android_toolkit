@@ -50,26 +50,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_70sdp"
-            android:layout_gravity="bottom"
-            android:background="@color/libraryColorWhite">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/logo_diet" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:padding="@dimen/_10sdp"
-                android:src="@drawable/logo_aswdc" />
-        </LinearLayout>
+        <include layout="@layout/view_du_aswdc_banner" />
     </FrameLayout>
 
 </LinearLayout>

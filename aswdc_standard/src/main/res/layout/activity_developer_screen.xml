@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
-    android:descendantFocusability="beforeDescendants"
     android:background="@color/libColorWindowBackground"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <!-- <include
@@ -239,28 +239,7 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_70sdp"
-                        android:layout_gravity="bottom"
-                        android:background="@color/libraryColorWhite">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:onClick="onDuClick"
-                            android:src="@drawable/logo_diet" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:onClick="onAswdcClick"
-                            android:padding="@dimen/_10sdp"
-                            android:src="@drawable/logo_aswdc" />
-                    </LinearLayout>
+                    <include layout="@layout/view_du_aswdc_banner" />
 
                     <!--<TextView
                         android:paddingTop="@dimen/_6sdp"
@@ -463,9 +442,9 @@
                         android:id="@+id/dev_rate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="onRateClick"
                         android:paddingLeft="@dimen/_3sdp"
                         android:paddingTop="@dimen/_3sdp"
-                        android:onClick="onRateClick"
                         android:paddingBottom="@dimen/_3sdp">
 
                         <com.aswdc_standard.IconTextView
@@ -487,9 +466,9 @@
                         android:id="@+id/dev_like_fb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="onFBClick"
                         android:paddingLeft="@dimen/_3sdp"
                         android:paddingTop="@dimen/_3sdp"
-                        android:onClick="onFBClick"
                         android:paddingBottom="@dimen/_3sdp">
 
                         <com.aswdc_standard.IconTextView
@@ -511,8 +490,8 @@
                         android:id="@+id/dev_update"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/_3sdp"
                         android:onClick="onUpdateClick"
+                        android:paddingLeft="@dimen/_3sdp"
                         android:paddingTop="@dimen/_3sdp"
                         android:paddingBottom="@dimen/_3sdp">
 
@@ -563,11 +542,12 @@
                     android:id="@+id/dev_tv_privacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Privacy Policy"
                     android:onClick="onPrivacyClick"
+                    android:text="Privacy Policy"
                     android:textColor="#00008B"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
+
             <com.aswdc_standard.IconTextView
                 android:id="@+id/developer_tv_footer"
                 android:layout_width="wrap_content"
