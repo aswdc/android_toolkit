@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.aswdc_standard.custom_interface.OnDbUpdateClick;
 
 import java.util.Calendar;
 
@@ -20,6 +23,8 @@ public class BaseDeveloperActivity extends LibBaseActivity {
     TextView tvAppVersion;
     TextView tvCompanyRights;
     WebView wvDetail;
+    OnDbUpdateClick onDbUpdateClick;
+    LinearLayout llDbUpdate;
 
     String appName;
     String shareMessage;
@@ -35,17 +40,25 @@ public class BaseDeveloperActivity extends LibBaseActivity {
         tvMentorName = findViewById(R.id.tvMentorName);
         wvDetail = findViewById(R.id.developer_wv_detail);
         tvCompanyRights = findViewById(R.id.tvCompanyRights);
-
+        llDbUpdate = findViewById(R.id.check_database_update);
         if (savedInstanceState != null) {
             ivAppIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             appName = savedInstanceState.getString(LibConstants.APP_TITLE);
             tvAppVersion.setText(savedInstanceState.getString(LibConstants.APP_TITLE) + " (v" + savedInstanceState.getString(LibConstants.APP_VERSION) + ")");
             shareMessage = savedInstanceState.getString(LibConstants.APP_SHARE_MESSAGE);
+            onDbUpdateClick = (OnDbUpdateClick) savedInstanceState.getSerializable(LibConstants.ON_DB_UPDATE_CLICK);
             tvDeveloperName.setText(savedInstanceState.getString(LibConstants.APP_DEVELOPER_NAME) + ",\nSchool Of Computer Science");
             tvMentorName.setText(savedInstanceState.getString(LibConstants.APP_MENTOR_NAME) + ",\nSchool Of Computer Science");
         }
+        llDbUpdate.setVisibility(onDbUpdateClick != null ? View.VISIBLE : View.GONE);
         tvCompanyRights.setText("\uf1f9 " + Calendar.getInstance().get(Calendar.YEAR) + "  Darshan University");
         wvDetail.loadDataWithBaseURL(null, "<html><body align=\"justify\" style=\"font-size:15px;color:#747474\">ASWDC is Application, Software and Website Development Center @ Darshan University run by Students and Staff of School Of Computer Science.<br><br> Sole purpose of ASWDC is to bridge gap between university curriculum &amp; industry demands. Students learn cutting edge technologies, develop real world application &amp; experiences professional environment @ ASWDC under guidance of industry experts &amp; faculty members.", "text/html", "utf-8", null);
+    }
+
+    public void onDbUpdateClick(View view) {
+        if (onDbUpdateClick != null) {
+            onDbUpdateClick.onDbUpdateClick();
+        }
     }
 
     public void onEmailClick(View view) {
@@ -70,7 +83,6 @@ public class BaseDeveloperActivity extends LibBaseActivity {
 
     public void onAswdcClick(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.aswdc.in")));
-
     }
 
     public void onShareClick(View view) {
@@ -100,17 +112,14 @@ public class BaseDeveloperActivity extends LibBaseActivity {
             Intent moreappsintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
             startActivity(moreappsintent);
         }
-
     }
 
     public void onFBClick(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/DarshanInstitute.Official")));
-
     }
 
     public void onPrivacyClick(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.darshan.ac.in/DIET/ASWDC-Mobile-Apps/Privacy-Policy-General")));
-
     }
 
     public void onUpdateClick(View view) {

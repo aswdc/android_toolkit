@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.aswdc_standard.custom_interface.OnDbUpdateClick;
+
 public class LibBaseActivity extends AppCompatActivity {
 
     public String getVerionByPackageName(String packageName) {
@@ -41,7 +43,7 @@ public class LibBaseActivity extends AppCompatActivity {
         return 0;
     }
 
-    public Bundle setDeveloperScreenDetail(String packageName, String shareMessage, String developerName, String mentorName) {
+    public Bundle setDeveloperScreenDetail(String packageName, String shareMessage, String developerName, String mentorName, OnDbUpdateClick onDbUpdateClick) {
         Bundle bundle = new Bundle();
         bundle.putInt(LibConstants.APP_ICON, getAppIcon(packageName));
         bundle.putString(LibConstants.APP_TITLE, getAppNameFromPkgName(packageName));
@@ -49,6 +51,7 @@ public class LibBaseActivity extends AppCompatActivity {
         bundle.putString(LibConstants.APP_SHARE_MESSAGE, shareMessage);
         bundle.putString(LibConstants.APP_DEVELOPER_NAME, developerName);
         bundle.putString(LibConstants.APP_MENTOR_NAME, mentorName);
+        bundle.putSerializable(LibConstants.ON_DB_UPDATE_CLICK, onDbUpdateClick);
         return bundle;
     }
 
