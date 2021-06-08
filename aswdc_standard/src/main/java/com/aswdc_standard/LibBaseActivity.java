@@ -1,10 +1,12 @@
 package com.aswdc_standard;
 
+import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aswdc_standard.custom_interface.OnDbUpdateClick;
@@ -20,6 +22,16 @@ public class LibBaseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return "";
+    }
+
+    void showNetworkAlert(final boolean isFininsh) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage("Connection Problem\n" + "Check Your Internet Connection");
+        dialog.setPositiveButton("OK", (dialog1, which) -> {
+            if (isFininsh)
+                finish();
+        });
+        dialog.show();
     }
 
     public String getAppNameFromPkgName(String Packagename) {
