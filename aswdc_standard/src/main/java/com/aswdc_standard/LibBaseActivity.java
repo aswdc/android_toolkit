@@ -24,7 +24,7 @@ public class LibBaseActivity extends AppCompatActivity {
         return "";
     }
 
-    void showNetworkAlert(final boolean isFininsh) {
+   public void showNetworkAlert(final boolean isFininsh) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setMessage("Connection Problem\n" + "Check Your Internet Connection");
         dialog.setPositiveButton("OK", (dialog1, which) -> {
