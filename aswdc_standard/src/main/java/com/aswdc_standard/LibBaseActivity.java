@@ -1,15 +1,22 @@
 package com.aswdc_standard;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aswdc_standard.custom_interface.OnDbUpdateClick;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class LibBaseActivity extends AppCompatActivity {
 
@@ -24,7 +31,17 @@ public class LibBaseActivity extends AppCompatActivity {
         return "";
     }
 
-   public void showNetworkAlert(final boolean isFininsh) {
+    public void showBottomSheetDialog(String text) {
+        BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog(this);
+        View sheetView = getLayoutInflater().inflate(R.layout.bottom_dialog_disclaimer, null);
+        mBottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mBottomSheetDialog.setContentView(sheetView);
+        ((WebView) sheetView.findViewById(R.id.ans_web_ans)).loadData(text, "text/html", "utf-8");
+        (sheetView.findViewById(R.id.btnClose)).setOnClickListener(view -> mBottomSheetDialog.cancel());
+        mBottomSheetDialog.show();
+    }
+
+    public void showNetworkAlert(final boolean isFininsh) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setMessage("Connection Problem\n" + "Check Your Internet Connection");
         dialog.setPositiveButton("OK", (dialog1, which) -> {
@@ -53,6 +70,11 @@ public class LibBaseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null;
     }
 
     public Bundle setDeveloperScreenDetail(String packageName, String shareMessage, String developerName, String mentorName, OnDbUpdateClick onDbUpdateClick) {

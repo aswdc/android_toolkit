@@ -96,8 +96,11 @@ public class BaseDeveloperActivity extends LibBaseActivity {
 
     public void onMoreAppsClick(View view) {
         try {
-            Intent moreappsintent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:Darshan+Institute+of+Engineering+%26+Technology"));
-            startActivity(moreappsintent);
+            if (onDbUpdateClick != null) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=Admission+Mobile+Apps")));
+            } else {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=Darshan+University")));
+            }
         } catch (ActivityNotFoundException e) {
             Intent moreappsintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
             startActivity(moreappsintent);
