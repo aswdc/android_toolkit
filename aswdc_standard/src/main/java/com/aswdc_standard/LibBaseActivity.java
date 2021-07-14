@@ -11,9 +11,11 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.aswdc_standard.custom_interface.OnDbUpdateClick;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -29,6 +31,10 @@ public class LibBaseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public void setPrimaryTextColor(TextView view) {
+        view.setTextColor(ContextCompat.getColor(this, R.color.design_default_color_primary));
     }
 
     public void showBottomSheetDialog(String text) {

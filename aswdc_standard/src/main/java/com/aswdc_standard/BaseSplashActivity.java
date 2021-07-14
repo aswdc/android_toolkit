@@ -1,11 +1,14 @@
 package com.aswdc_standard;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 public class BaseSplashActivity extends LibBaseActivity {
 
@@ -24,6 +27,8 @@ public class BaseSplashActivity extends LibBaseActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        (findViewById(R.id.mainFrame)).setBackgroundColor(ContextCompat.getColor(this, R.color.design_default_color_primary));
         ivIcon = findViewById(R.id.ivAppIcon);
         tvTitle = findViewById(R.id.tvTitle);
         tvAppVersion = findViewById(R.id.tvAppVersion);

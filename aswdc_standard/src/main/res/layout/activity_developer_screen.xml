@@ -35,14 +35,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
-                android:text="AppName(v0.0)"
-                android:textColor="?colorPrimary" />
-
+                android:text="AppName(v0.0)" />
+<!--            android:background="@drawable/background_textview_developer"-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
-                android:background="@drawable/background_textview_developer"
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
                 android:paddingTop="@dimen/_4sdp"
@@ -61,11 +59,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-
+<!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_webview_developera"
+
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
@@ -77,6 +75,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvDevelopedBy"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.8"
@@ -111,6 +110,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvMentoredBy"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.8"
@@ -145,6 +145,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvAswdcText"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.8"
@@ -178,6 +179,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvDUText"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.8"
@@ -205,13 +207,13 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
+<!--            android:background="@drawable/background_textview_developer"-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:background="@drawable/background_textview_developer"
+
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
                 android:paddingTop="@dimen/_4sdp"
@@ -231,11 +233,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-
+<!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_webview_developera"
+
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
@@ -260,13 +262,13 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
+<!--            android:background="@drawable/background_textview_developer"-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:background="@drawable/background_textview_developer"
+
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
                 android:paddingTop="@dimen/_4sdp"
@@ -286,11 +288,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_3sdp">
-
+<!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_webview_developera"
+
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
@@ -382,11 +384,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-
+<!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_webview_developera"
+
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
