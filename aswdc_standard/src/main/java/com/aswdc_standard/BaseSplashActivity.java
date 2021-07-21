@@ -28,7 +28,7 @@ public class BaseSplashActivity extends LibBaseActivity {
             getSupportActionBar().hide();
         }
 
-        (findViewById(R.id.mainFrame)).setBackgroundColor(ContextCompat.getColor(this, R.color.design_default_color_primary));
+
         ivIcon = findViewById(R.id.ivAppIcon);
         tvTitle = findViewById(R.id.tvTitle);
         tvAppVersion = findViewById(R.id.tvAppVersion);
@@ -38,6 +38,7 @@ public class BaseSplashActivity extends LibBaseActivity {
             tvAppVersion.setText("v" + savedInstanceState.getString(LibConstants.APP_VERSION));
             tvAppVersion.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_APP_VERSION) ? View.VISIBLE : View.GONE);
             tvTitle.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_APP_NAME) ? View.VISIBLE : View.GONE);
+            (findViewById(R.id.mainFrame)).setBackgroundColor(getAppPrimaryColor(savedInstanceState.getString(LibConstants.APP_PACKAGE_NAME)));
         }
     }
 }

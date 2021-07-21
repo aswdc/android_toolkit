@@ -84,30 +84,12 @@ public class BaseDeveloperActivity extends LibBaseActivity {
         dev_ic_like = findViewById(R.id.dev_ic_like);
         dev_ic_update = findViewById(R.id.dev_ic_update);
         dev_db_update = findViewById(R.id.dev_db_update);
-
-        setPrimaryTextColor(dev_ic_mail);
-        setPrimaryTextColor(dev_ic_phone);
-        setPrimaryTextColor(dev_ic_web);
-        setPrimaryTextColor(dev_ic_share);
-        setPrimaryTextColor(dev_ic_app);
-        setPrimaryTextColor(dev_ic_rate);
-        setPrimaryTextColor(dev_ic_like);
-        setPrimaryTextColor(dev_ic_update);
-        setPrimaryTextColor(dev_db_update);
-
-        setPrimaryTextColor(tvAppVersion);
-        setPrimaryTextColor(tvMentoredBy);
-        setPrimaryTextColor(tvDevelopedBy);
-        setPrimaryTextColor(tvMentoredBy);
-        setPrimaryTextColor(tvAswdcText);
-        setPrimaryTextColor(tvDUText);
-        setPrimaryTextColor(tvAppVersion);
-        setPrimaryTextColor(tvAppVersion);
         tvDeveloperName = findViewById(R.id.tvDeveloperName);
         tvMentorName = findViewById(R.id.tvMentorName);
         wvDetail = findViewById(R.id.developer_wv_detail);
         tvCompanyRights = findViewById(R.id.tvCompanyRights);
         llDbUpdate = findViewById(R.id.check_database_update);
+
         if (savedInstanceState != null) {
             ivAppIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             appName = savedInstanceState.getString(LibConstants.APP_TITLE);
@@ -118,6 +100,27 @@ public class BaseDeveloperActivity extends LibBaseActivity {
             tvMentorName.setText(savedInstanceState.getString(LibConstants.APP_MENTOR_NAME) + ",\nSchool Of Computer Science");
             packageName = savedInstanceState.getString(LibConstants.APP_PACKAGE_NAME);
         }
+
+        setPrimaryTextColor(dev_ic_mail, packageName);
+        setPrimaryTextColor(dev_ic_phone, packageName);
+        setPrimaryTextColor(dev_ic_web, packageName);
+        setPrimaryTextColor(dev_ic_share, packageName);
+        setPrimaryTextColor(dev_ic_app, packageName);
+        setPrimaryTextColor(dev_ic_rate, packageName);
+        setPrimaryTextColor(dev_ic_like, packageName);
+        setPrimaryTextColor(dev_ic_update, packageName);
+        setPrimaryTextColor(dev_db_update, packageName);
+
+        setPrimaryTextColor(tvAppVersion, packageName);
+        setPrimaryTextColor(tvMentoredBy, packageName);
+        setPrimaryTextColor(tvDevelopedBy, packageName);
+        setPrimaryTextColor(tvMentoredBy, packageName);
+        setPrimaryTextColor(tvAswdcText, packageName);
+        setPrimaryTextColor(tvDUText, packageName);
+        setPrimaryTextColor(tvAppVersion, packageName);
+        setPrimaryTextColor(tvAppVersion, packageName);
+
+
         setDeveloperDrawable();
         setWebviewBackground();
         llDbUpdate.setVisibility(onDbUpdateClick != null ? View.VISIBLE : View.GONE);
@@ -127,33 +130,33 @@ public class BaseDeveloperActivity extends LibBaseActivity {
 
     void setDeveloperDrawable() {
         GradientDrawable gd = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_textview_developer);
-        gd.setColor(ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd.setColor(getAppPrimaryColorDark(packageName));
         tvHeaderContactUs.setBackground(gd);
 
         GradientDrawable gd1 = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_textview_developer);
-        gd1.setColor(ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd1.setColor(getAppPrimaryColorDark(packageName));
         tvHeaderAswdc.setBackground(gd1);
 
         GradientDrawable gd2 = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_textview_developer);
-        gd2.setColor(ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd2.setColor(getAppPrimaryColorDark(packageName));
         tvHeaderOurTeam.setBackground(gd2);
     }
 
     void setWebviewBackground() {
         GradientDrawable gd = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_webview_developera);
-        gd.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, getAppPrimaryColorDark(packageName));
         llContainerTeam.setBackground(gd);
 
         GradientDrawable gd1 = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_webview_developera);
-        gd1.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd1.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, getAppPrimaryColorDark(packageName));
         llContact.setBackground(gd1);
 
         GradientDrawable gd2 = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_webview_developera);
-        gd2.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd2.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, getAppPrimaryColorDark(packageName));
         llSocialMedia.setBackground(gd2);
 
         GradientDrawable gd3 = (GradientDrawable) ContextCompat.getDrawable(this, R.drawable.background_webview_developera);
-        gd3.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, ContextCompat.getColor(this, R.color.design_default_color_primary_dark));
+        gd3.setStroke(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 3 : 1, getAppPrimaryColorDark(packageName));
         llWebview.setBackground(gd3);
     }
 

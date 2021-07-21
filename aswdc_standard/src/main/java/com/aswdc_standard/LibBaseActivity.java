@@ -46,7 +46,8 @@ public class LibBaseActivity extends AppCompatActivity {
             };
             final Resources.Theme theme = res.newTheme();
             final ComponentName cn = pm.getLaunchIntentForPackage(packageName).getComponent();
-            theme.applyStyle(pm.getActivityInfo(cn, 0).theme, false);
+            final ApplicationInfo ai = pm.getApplicationInfo(packageName, 0);
+            theme.applyStyle(ai.theme, false);
             TypedArray a = theme.obtainStyledAttributes(attrs);
             final int colorPrimary = a.getColor(0, a.getColor(1, Color.WHITE));
             a.recycle();
@@ -58,8 +59,31 @@ public class LibBaseActivity extends AppCompatActivity {
         return 0;
     }
 
-    public void setPrimaryTextColor(TextView view) {
-        view.setTextColor(ContextCompat.getColor(this, R.color.design_default_color_primary));
+    public int getAppPrimaryColorDark(String packageName) {
+        try {
+            final PackageManager pm = getPackageManager();
+            final Resources res = pm.getResourcesForApplication(packageName);
+            final int[] attrs = new int[]{
+                    res.getIdentifier("colorPrimaryDark", "attr", packageName),
+                    android.R.attr.colorPrimary
+            };
+            final Resources.Theme theme = res.newTheme();
+            final ComponentName cn = pm.getLaunchIntentForPackage(packageName).getComponent();
+            final ApplicationInfo ai = pm.getApplicationInfo(packageName, 0);
+            theme.applyStyle(ai.theme, false);
+            TypedArray a = theme.obtainStyledAttributes(attrs);
+            final int colorPrimary = a.getColor(0, a.getColor(1, Color.WHITE));
+            a.recycle();
+            a = null;
+            return colorPrimary;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public void setPrimaryTextColor(TextView view, String packageName) {
+        view.setTextColor(getAppPrimaryColor(packageName));
     }
 
     public void showBottomSheetDialog(String text) {
@@ -123,6 +147,7 @@ public class LibBaseActivity extends AppCompatActivity {
 
     public Bundle setSplashScreenDetail(String packageName, boolean isShowAppversion, boolean isShowAppName, int appIcon) {
         Bundle bundle = new Bundle();
+        bundle.putString(LibConstants.APP_PACKAGE_NAME, packageName);
         bundle.putInt(LibConstants.APP_ICON, appIcon == 0 ? getAppIcon(packageName) : appIcon);
         bundle.putString(LibConstants.APP_TITLE, getAppNameFromPkgName(packageName));
         bundle.putString(LibConstants.APP_VERSION, getVerionByPackageName(packageName));
