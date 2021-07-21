@@ -36,8 +36,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
                 android:text="AppName(v0.0)" />
-<!--            android:background="@drawable/background_textview_developer"-->
+
             <TextView
+                android:id="@+id/tvHeaderOurTeam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
@@ -59,11 +60,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-<!--                android:background="@drawable/background_webview_developera"-->
+                <!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
+                    android:id="@+id/llContainerTeam"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
@@ -207,13 +208,13 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-<!--            android:background="@drawable/background_textview_developer"-->
+
             <TextView
+                android:id="@+id/tvHeaderAswdc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
                 android:paddingTop="@dimen/_4sdp"
@@ -233,11 +234,11 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-<!--                android:background="@drawable/background_webview_developera"-->
+                <!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
+                    android:id="@+id/llWebview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:orientation="vertical"
                     android:padding="@dimen/_6sdp">
 
@@ -262,13 +263,13 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-<!--            android:background="@drawable/background_textview_developer"-->
+
             <TextView
+                android:id="@+id/tvHeaderContactUs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-
                 android:fontFamily="sans-serif"
                 android:paddingLeft="@dimen/_8sdp"
                 android:paddingTop="@dimen/_4sdp"
@@ -288,8 +289,9 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_3sdp">
-<!--                android:background="@drawable/background_webview_developera"-->
+                <!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
+                    android:id="@+id/llContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
@@ -384,8 +386,9 @@
                 android:paddingRight="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/libColorWhite"
                 app:cardCornerRadius="@dimen/_4sdp">
-<!--                android:background="@drawable/background_webview_developera"-->
+                <!--                android:background="@drawable/background_webview_developera"-->
                 <LinearLayout
+                    android:id="@+id/llSocialMedia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
@@ -511,15 +514,16 @@
                             android:text="Check for Updates" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/check_database_update"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="onDbUpdateClick"
-                        android:visibility="gone"
                         android:paddingLeft="@dimen/_3sdp"
                         android:paddingTop="@dimen/_3sdp"
-                        android:paddingBottom="@dimen/_3sdp">
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:visibility="gone">
 
                         <com.aswdc_standard.IconTextView
                             android:id="@+id/dev_db_update"

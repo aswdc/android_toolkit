@@ -10,5 +10,6 @@ public class LibConstants {
     public static final String APP_SHARE_MESSAGE = "AppShareMessage";
     public static final String APP_DEVELOPER_NAME = "Developer Name";
     public static final String APP_MENTOR_NAME = "Mentor Name";
+    public static final String APP_PACKAGE_NAME = "Package Name";
     public static final String ON_DB_UPDATE_CLICK = "onDbUpdateClick";
 }

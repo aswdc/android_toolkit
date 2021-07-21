@@ -1,10 +1,13 @@
 package com.aswdc_standard;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
@@ -31,6 +34,28 @@ public class LibBaseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public int getAppPrimaryColor(String packageName) {
+        try {
+            final PackageManager pm = getPackageManager();
+            final Resources res = pm.getResourcesForApplication(packageName);
+            final int[] attrs = new int[]{
+                    res.getIdentifier("colorPrimary", "attr", packageName),
+                    android.R.attr.colorPrimary
+            };
+            final Resources.Theme theme = res.newTheme();
+            final ComponentName cn = pm.getLaunchIntentForPackage(packageName).getComponent();
+            theme.applyStyle(pm.getActivityInfo(cn, 0).theme, false);
+            TypedArray a = theme.obtainStyledAttributes(attrs);
+            final int colorPrimary = a.getColor(0, a.getColor(1, Color.WHITE));
+            a.recycle();
+            a = null;
+            return colorPrimary;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public void setPrimaryTextColor(TextView view) {
@@ -90,6 +115,7 @@ public class LibBaseActivity extends AppCompatActivity {
         bundle.putString(LibConstants.APP_VERSION, getVerionByPackageName(packageName));
         bundle.putString(LibConstants.APP_SHARE_MESSAGE, shareMessage);
         bundle.putString(LibConstants.APP_DEVELOPER_NAME, developerName);
+        bundle.putString(LibConstants.APP_PACKAGE_NAME, packageName);
         bundle.putString(LibConstants.APP_MENTOR_NAME, mentorName);
         bundle.putSerializable(LibConstants.ON_DB_UPDATE_CLICK, onDbUpdateClick);
         return bundle;
