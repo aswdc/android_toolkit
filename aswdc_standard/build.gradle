@@ -3,6 +3,15 @@ plugins {
     id 'maven-publish';
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            //groupId = '{your_package_name}'
+            artifactId = 'aswdc_android_skeletonapp'
+           // version = '1.1.18'
+        }
+    }
+}
 android {
     compileSdkVersion 34
     buildToolsVersion "34.0.0"
