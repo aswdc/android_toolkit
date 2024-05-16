@@ -13,6 +13,8 @@ import androidx.core.content.ContextCompat;
 public class BaseSplashActivity extends LibBaseActivity {
 
     ImageView ivIcon;
+    View viewSpace;
+    ImageView ivGloriousIcon;
     TextView tvTitle;
     TextView tvAppVersion;
 
@@ -30,9 +32,13 @@ public class BaseSplashActivity extends LibBaseActivity {
 
 
         ivIcon = findViewById(R.id.ivAppIcon);
+        viewSpace=findViewById(R.id.viewSpace);
+        ivGloriousIcon= findViewById(R.id.ivGloriousIcon);
         tvTitle = findViewById(R.id.tvTitle);
         tvAppVersion = findViewById(R.id.tvAppVersion);
         if (savedInstanceState != null) {
+            viewSpace.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_ADMISSION_APP)?View.GONE:View.VISIBLE);
+            ivGloriousIcon.setVisibility(savedInstanceState.getBoolean(LibConstants.IS_ADMISSION_APP)?View.VISIBLE:View.GONE);
             ivIcon.setImageResource(savedInstanceState.getInt(LibConstants.APP_ICON));
             tvTitle.setText(savedInstanceState.getString(LibConstants.APP_TITLE));
             tvAppVersion.setText("v" + savedInstanceState.getString(LibConstants.APP_VERSION));

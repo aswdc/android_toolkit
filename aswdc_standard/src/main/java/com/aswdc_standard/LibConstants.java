@@ -6,6 +6,7 @@ public class LibConstants {
     public static final String APP_TITLE = "AppTitle";
     public static final String APP_VERSION = "AppVersion";
     public static final String IS_APP_VERSION = "IsAppVersion";
+    public static final String IS_ADMISSION_APP = "IsAdmissionApp";
     public static final String IS_APP_NAME = "IsAppVersion";
     public static final String APP_SHARE_MESSAGE = "AppShareMessage";
     public static final String APP_DEVELOPER_NAME = "Developer Name";

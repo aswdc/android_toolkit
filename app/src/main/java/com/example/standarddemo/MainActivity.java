@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -25,7 +28,19 @@ public class MainActivity extends AppCompatActivity {
         layoutBackground = findViewById(R.id.mainFrame);
         tvAppVersion = findViewById(R.id.tvAppVersion);
         layoutBackground.setAlpha((float) 0.8);
-        tvAppVersion.setText("V" + BuildConfig.VERSION_NAME);
+        PackageManager manager = this.getPackageManager();
+        PackageInfo info = null;
+        try {
+             info = manager.getPackageInfo(this.getPackageName(), PackageManager.GET_ACTIVITIES);
+        }catch (Exception e){
+
+        }
+        if (info==null){
+            tvAppVersion.setVisibility(View.GONE);
+        }else{
+            tvAppVersion.setText("V" + info.versionName);
+        }
+
         new Thread(new Runnable() {
 
             @Override

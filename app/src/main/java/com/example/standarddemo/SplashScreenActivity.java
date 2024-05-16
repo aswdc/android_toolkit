@@ -10,7 +10,7 @@ public class SplashScreenActivity extends BaseSplashActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(setSplashScreenDetail(BuildConfig.APPLICATION_ID, false, false, 0));
+        super.onCreate(setSplashScreenDetail(getApplicationContext().getPackageName(), false, false, 0,true));
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashScreenActivity.this, DeveloperActivity.class));
             finish();

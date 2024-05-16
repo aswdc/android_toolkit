@@ -20,7 +20,7 @@ public class AswdcEdittextRegular extends TextInputLayout {
     }
 
     public AswdcEdittextRegular(@NonNull Context context, AttributeSet attrs) {
-        super(context, attrs, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
+        super(context, attrs, com.google.android.material.R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
         init();
     }
 
